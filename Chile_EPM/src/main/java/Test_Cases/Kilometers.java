@@ -63,7 +63,7 @@ WebDriver driver;
 		WebElement m = driver.findElement(By.xpath("//div[text()='seleccione la ciudad']"));
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("arguments[0].click();", m);
-        driver.findElement(By.xpath("//li[text()='Santiago']")).click();
+                driver.findElement(By.xpath("//li[text()='Santiago']")).click();
         
 		
 	   //Inicio Kilómetros
@@ -92,7 +92,7 @@ WebDriver driver;
     		  i.click();
     	      }
 	   }
-        }
+         }
 	    
       }	
 }
