@@ -94,8 +94,23 @@ WebDriver driver;
 		driver.findElement(By.xpath("//div[text()='Seleccione la ubicación de la tienda']")).click();
 		driver.findElement(By.xpath("//li[text()='Activo Paga Impuesto Territor.']")).click();
 		
-	 /* //Aceptar
-	  *	driver.findElement(By.xpath("//span[text()='Aceptar']")).click(); */
+	       //Aceptar
+	  	driver.findElement(By.xpath("//span[text()='Aceptar']")).click();
+		
+		
+	@AfterMethod
+       public void logout()
+        {
+            List<WebElement>suggestion=driver.findElements(By.xpath("//button[text()='Logout']"));
+            for(WebElement i:suggestion)
+          {
+    	  String sug1=i.getText();
+    	  if(sug1.contains("Logout"))
+    	      {
+    		  i.click();
+    	      }
+	   }
+        }
 		
   }
 }
