@@ -78,6 +78,21 @@ WebDriver driver;
 		
 	   //Aceptar	
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		  
+		  
+	@AfterMethod
+       public void logout()
+        {
+            List<WebElement>suggestion=driver.findElements(By.xpath("//button[text()='Logout']"));
+            for(WebElement i:suggestion)
+          {
+    	  String sug1=i.getText();
+    	  if(sug1.contains("Logout"))
+    	      {
+    		  i.click();
+    	      }
+	   }
+        }
 	    
       }	
 }
