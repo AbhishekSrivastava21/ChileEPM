@@ -62,7 +62,7 @@ WebDriver driver;
 		 wait1.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//li[text()='ABARZA MESINA JENARO']")));
 		driver.findElement(By.xpath("//li[text()='ABARZA MESINA JENARO']")).click();
 		
-	    //Papel
+	        //Papel
 		driver.findElement(By.xpath("//div[text()='Seleccionar rol']")).click();
 		driver.findElement(By.xpath("//li[text()='SUPERVISOR']")).click();
 		
@@ -70,10 +70,24 @@ WebDriver driver;
 		//Calificar
 		driver.findElement(By.cssSelector("[placeholder='Entrada en $']")).sendKeys("65");
 		
-		/*//Aceptar	
-		driver.findElement(By.xpath("//button[@type='submit']")).click();*/
-		
-	
+	       //Aceptar	
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		  
+		  
+	@AfterMethod
+       public void logout()
+        {
+            List<WebElement>suggestion=driver.findElements(By.xpath("//button[text()='Logout']"));
+            for(WebElement i:suggestion)
+           {
+    	  String sug1=i.getText();
+    	  if(sug1.contains("Logout"))
+    	      {
+    		  i.click();
+    	      }
+	   }
+         }
+			
       }
       
 }
